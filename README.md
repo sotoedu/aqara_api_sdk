@@ -1,10 +1,9 @@
 Aqara Developer Platform is an open cooperation platform of Lumi United Technology Co.,Ltd for IoT software and hardware products.
 
 # Getting Started
+https://developer.aqara.com/
 
 ## Step 1: install package
-
-https://developer.aqara.com/
 
 ```bash
 # pip install
@@ -15,6 +14,49 @@ $ source venv/bin/activate
 $ mkdir myapp
 $ cd myapp
 $ pip install git+https://github.com/sotoedu/aqara_api_sdk.git
+
+```
+
+## Step 2: create app.py
+
+
+```bash
+# create app.py
+$ touch app.py
+$ nano app.py
+```
+
+def auth()
+```bash
+# def auth()
+
+def auth():
+    try: 
+        client = AqaraClient(api_key='iloveiot!')
+        print('auth payload : ' , request)
+        APPID = request.json.get('data1')
+        APPKEY = request.json.get('data2')
+        KEYID = request.json.get('data3')
+        email = request.json.get('data4')
+
+        payload = {
+            'appid': APPID,
+            'appkey': APPKEY , 
+            'keyid': KEYID ,
+            'email': email
+        }
+
+        response_data = client.get_auth(payload)
+
+        response = {
+            'message': 'success',
+            'result': response_data
+        }
+        
+        return jsonify(response)
+    
+    except Exception as error:
+        print('error : ' , error)
 
 ```
 
