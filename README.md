@@ -12,8 +12,6 @@ $ mkdir project
 $ cd project
 $ python -m venv venv
 $ source venv/bin/activate
-$ cd ..
-$ cd ..
 $ mkdir myapp
 $ cd myapp
 $ pip install git+https://github.com/sotoedu/aqara_api_sdk.git
