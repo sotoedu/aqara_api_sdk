@@ -2,13 +2,21 @@ Aqara Developer Platform is an open cooperation platform of Lumi United Technolo
 
 # Getting Started
 
-## Step 1: Start the Metro Server
+## Step 1: install package
 
 https://developer.aqara.com/
 
 ```bash
-# using npm
-pip install git+https://github.com/sotoedu/aqara_api_sdk.git
+# pip install
+$ mkdir project
+$ cd project
+$ python -m venv venv
+$ source venv/bin/activate
+$ cd ..
+$ cd ..
+$ mkdir myapp
+$ cd myapp
+$ pip install git+https://github.com/sotoedu/aqara_api_sdk.git
 
 ```
 
