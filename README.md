@@ -36,15 +36,19 @@ def auth()
 ```bash
 # app.py
 from aqara import AqaraClient
+import traceback
+import json
 
-def auth():
+APPID  = 'data1'
+APPKEY = 'data2'
+KEYID  = 'data3'
+
+def auth(email):
     try: 
         client = AqaraClient(api_key='iloveiot!')
         print('auth payload : ' , request)
-        APPID = request.json.get('data1')
-        APPKEY = request.json.get('data2')
-        KEYID = request.json.get('data3')
-        email = request.json.get('data4')
+
+        # email  = 'data4'
 
         payload = {
             'appid': APPID,
@@ -63,7 +67,8 @@ def auth():
         return jsonify(response)
     
     except Exception as error:
-        print('error : ' , error)
+        print('[error] : ' , error)
+        print("[auth] traceback : ", traceback.format_exc())
 
 ```
 
@@ -71,17 +76,20 @@ def token()
 ```bash
 # app.py
 from aqara import AqaraClient
+import traceback
+import json
 
-def token():
+APPID  = 'data1'
+APPKEY = 'data2'
+KEYID  = 'data3'
+
+def token(authCode, email):
     try: 
 
         client = AqaraClient(api_key='iloveiot!')
-
-        APPID = request.json.get('data1')
-        APPKEY = request.json.get('data2')
-        KEYID = request.json.get('data3')
-        authCode = request.json.get('data4')
-        email = request.json.get('data5')
+        
+        # authCode = 'data4'
+        # email  = 'data5'
 
         # POST 요청
         payload = {
@@ -111,16 +119,19 @@ def position()
 ```bash
 # app.py
 from aqara import AqaraClient
+import traceback
+import json
 
-def position():
+APPID  = 'data1'
+APPKEY = 'data2'
+KEYID  = 'data3'
+
+def position(token):
     try: 
 
         client = AqaraClient(api_key='iloveiot!')
 
-        APPID = request.json.get('data1')
-        APPKEY = request.json.get('data2')
-        KEYID = request.json.get('data3')
-        token = request.json.get('data4')
+        # token  = 'data4'
 
         # POST 요청
         payload = {
@@ -151,17 +162,20 @@ def status()
 ```bash
 # app.py
 from aqara import AqaraClient
+import traceback
+import json
 
-def status():
+APPID  = 'data1'
+APPKEY = 'data2'
+KEYID  = 'data3'
+
+def status(model, token):
     try: 
 
         client = AqaraClient(api_key='iloveiot!')
 
-        APPID = request.json.get('data1')
-        APPKEY = request.json.get('data2')
-        KEYID = request.json.get('data3')
-        model = request.json.get('data4')
-        token = request.json.get('data5')
+        # model  = 'data4'
+        # token  = 'data5'
 
         # POST 요청
         payload = {
@@ -191,19 +205,22 @@ def write()
 ```bash
 # app.py
 from aqara import AqaraClient
+import traceback
+import json
 
-def write():
+APPID  = 'data1'
+APPKEY = 'data2'
+KEYID  = 'data3'
+
+def write(did, resid, control, token):
     try: 
 
         client = AqaraClient(api_key='iloveiot!')
         
-        APPID = request.json.get('data1')
-        APPKEY = request.json.get('data2')
-        KEYID = request.json.get('data3')        
-        did = request.json.get('data4')
-        resid = request.json.get('data5')
-        control = request.json.get('data6')
-        token = request.json.get('data7')
+        # did     = 'data4'
+        # resid   = 'data5'
+        # control = 'data6'   # 'on' or 'off'
+        # token   = 'data7'
 
         # POST 요청
         payload = {                          
@@ -234,18 +251,21 @@ def read()
 ```bash
 # app.py
 from aqara import AqaraClient
+import traceback
+import json
 
-def read():
+APPID  = 'data1'
+APPKEY = 'data2'
+KEYID  = 'data3'
+
+def read(did,resid,token):
     try: 
 
         client = AqaraClient(api_key='iloveiot!')
         
-        APPID = request.json.get('data1')
-        APPKEY = request.json.get('data2')
-        KEYID = request.json.get('data3')        
-        did = request.json.get('data4')
-        resid = request.json.get('data5')
-        token = request.json.get('data6')
+        # did    = 'data4'
+        # resid  = 'data5'
+        # token  = 'data6'
 
         # POST 요청
         payload = {                          
@@ -276,18 +296,21 @@ def history()
 ```bash
 # app.py
 from aqara import AqaraClient
+import traceback
+import json
 
-def history():
+APPID  = 'data1'
+APPKEY = 'data2'
+KEYID  = 'data3'
+
+def history(did,resid,token):
     try: 
 
         client = AqaraClient(api_key='iloveiot!')
 
-        APPID = request.json.get('data1')
-        APPKEY = request.json.get('data2')
-        KEYID = request.json.get('data3')
-        did = request.json.get('data4')
-        resid = request.json.get('data5')
-        token = request.json.get('data6')
+        # did    = 'data4'
+        # resid  = 'data5'
+        # token  = 'data6'
 
         # POST 요청
         payload = {                         
