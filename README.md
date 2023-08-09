@@ -3,6 +3,9 @@ Aqara Developer Platform is an open cooperation platform of Lumi United Technolo
 # Getting Started
 https://developer.aqara.com/
 
+Sure, to sign up on the developer platform and obtain keys:
+APPID, APPKEY, KEYID
+
 ## Step 0: prepare venv
 
 ```bash
@@ -28,7 +31,7 @@ pip install git+https://github.com/sotoedu/aqara_api_sdk.git
 
 
 ```bash
-# create app.py
+# create a sample app
 nano app.py
 ```
 
@@ -258,7 +261,7 @@ APPID  = 'data1'
 APPKEY = 'data2'
 KEYID  = 'data3'
 
-def read(did,resid,token):
+def read(did, resid, token):
     try: 
 
         client = AqaraClient(api_key='iloveiot!')
@@ -303,7 +306,7 @@ APPID  = 'data1'
 APPKEY = 'data2'
 KEYID  = 'data3'
 
-def history(did,resid,token):
+def history(did, resid, token):
     try: 
 
         client = AqaraClient(api_key='iloveiot!')
@@ -337,6 +340,20 @@ def history(did,resid,token):
 
 ```
 
+def main()
+```bash
+# app.py
+if __name__ == '__main__':
+    auth = auth('test@email.com')
+    token = token('auth_code','test@email.com')
+    position = position('token')
+    status = status('your_device_model','token')
+    write = write('device_id','resource_value','on','token')
+    read = read('device_id','resource_value','token')
+    history = history('device_id','resource_value','token')
+
+```
+
 ## Congratulations! :tada:
 
 You've successfully run and modified your Project. :partying_face:
@@ -352,7 +369,7 @@ If you can't get this to work, see the [Troubleshooting](https://developer.aqara
 
 # Learn More
 
-To learn more about React Native, take a look at the following resources:
+To learn more about Developer Platform, take a look at the following resources:
 
 - [Developer API Website](https://developer.aqara.com) - learn more about Aqara API.
 - [Getting Started](https://opendoc.aqara.cn/en) - Getting Started.
